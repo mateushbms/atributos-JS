@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Data de término: 11/02/2022-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta lang="pt-br">
+        <title>Atributos</title>
+        <!--<meta http-equiv="refresh" content="3">-->
+        <style>
+
+            /*estilos para a página*/
+            *{margin: 0}
+
+            header{width: 100vw;
+                height: 10vh;
+                background-color: black;
+                color: white;
+                text-align: center;}
+
+            button{background-color: #7E49E6;
+                color: yellow;
+                width: 150px;
+                height: 100px;
+                margin: 10px}
+
+            section{margin: 10px}
+
+            h1{margin: 10px;
+                font-family: 'times new roman'}
+
+            p{margin-top: 0px;
+                font-family: arial}
+
+            body{background-color: rgb(194, 194, 194);}
+        </style>
+    </head>
+    <body>
+        <script>
+            /*função para realizar a solicitação de dados, validação em um range específico,
+            e escrita na tela das informações sobre o usuário, solicitadas pela atividade*/
+            function action(){
+                nome = prompt('Informe seu nome: ')
+                altura = prompt('Informe sua altura: ')
+                if(altura<1.20 || altura>2.10){
+                    while(altura<1.20 || altura>2.10){
+                        altura = prompt('Informe uma altura entre 1.20 até 2.10: ')
+                    }
+                }
+                peso = prompt("Informe seu peso (em kilos): ")
+                if(peso<10 || peso>200){
+                    while(peso<10 || peso>200)
+                        peso = prompt('Informe um peso entre 10 até 200 (em kilos): ')
+                }
+                sexo = prompt('Informe seu sexo (M ou F): ')
+                if(sexo!='F' && sexo!='M'){
+                    while(sexo!='F' && sexo!='M')
+                        sexo = prompt('Informe se o sexo é M ou F: ')
+                }
+                if(sexo=='M')
+                    sexo = 'Masculino'
+                else
+                    sexo = 'Feminino'
+                idade = prompt('Informe sua idade: ')
+                if(idade<=5 || idade >=120){
+                    while(idade<=5 || idade>=120)
+                        idade = prompt('Informe uma idade entre 5 anos até 120 anos: ')
+                }
+                var result = document.getElementById('resultado')
+                result.innerHTML = `<p>Aqui está seu resultado, já analisado: </p>`
+                result.innerHTML += `<p>Nome: <mark>${nome}</mark><br>Altura: <mark>${altura}m</mark><br>Peso: <mark>${peso}kg</mark><br>Sexo: <mark>${sexo}</mark><br>Idade: <mark>${idade}</mark></p>`
+                result.innerHTML += `<p><br>Olá <mark>${nome}</mark>, seu peso é <mark>${peso}kg</mark> e sua idade é <mark>${idade} anos</mark>.</p>`
+            }
+        </script>
+        <header>
+            <p>Mateus Henrique<br>Desenvolvimento de Software Multiplataforma<br>Desenvolvimento Web II - Ex.: 01 Atributos de uma pessoa</p>
+        </header>
+        <h1>Atributos de uma pessoa</h1>
+            <button onclick="action()">Clique aqui</button>
+            <section id="resultado">
+                <!--section para utilizar o innerHTML para exibir na tela a saída de dados,
+                conforme solicitado pela atividade-->
+                <p>Seu resultado aparecerá aqui: </p>
+            </section>
+    </body>
+</html>
