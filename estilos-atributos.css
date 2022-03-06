@@ -1,0 +1,24 @@
+/*estilos para a página*/
+        *{margin: 0}
+
+        header{width: 100vw;
+            height: 10vh;
+            background-color: black;
+            color: white;
+            text-align: center;}
+
+        button{background-color: #7E49E6;
+            color: yellow;
+            width: 150px;
+            height: 100px;
+            margin: 10px}
+
+        section{margin: 10px}
+
+        h1{margin: 10px;
+            font-family: 'times new roman'}
+
+        p{margin-top: 0px;
+            font-family: arial}
+
+        body{background-color: rgb(194, 194, 194);}
